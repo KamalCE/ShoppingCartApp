@@ -1,0 +1,47 @@
+<ion-view view-title="Product Catalog">
+    <ion-nav-bar class="bar-calm">
+        <ion-nav-back-button class="button-clear">
+            <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+        <a ng-hide="hideMe" class="button button-icon icon ion-plus-circled" href="#/addproducts"></a>
+    </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="padding has-header gem-ion-content profile-edit" ng-init="getAllProducts()">
+    <ion-list>
+    
+        <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" name="searchText" ng-model="searchText" placeholder="Search">
+          </label>
+        </div>
+        <!--   <ion-item ng-repeat="product in products | filter:searchText" ng-click="goProduct(product)">
+            {{product.name}}
+            <span class="item-note">
+              ₹ {{product.price}}
+            </span>
+          </ion-item> -->
+    <div class="row"  ng-repeat="img in products | filter:searchText"">
+      <div class="col-50 item item-body" ng-repeat="img1 in img.images" ng-click="goProduct(img1)"> 
+      <img width="98%" height="150px" ng-click="openModalImage(img1)"  ng-src="img/dress1.jpg" >
+      <h2>{{img1.name}}</h2>
+      <p>₹ {{img1.price}}</p>
+
+      </div>
+    </div>
+
+          
+    </ion-list>
+    </ion-content>
+    <div class="bar bar-footer bar-balanced" ng-hide="showHideLogOut">
+           <div class="button-bar">
+            <button class="button button-balanced" ng-click="logOut()">LogOut</button>
+    </div>
+    </div>
+     <div class="bar bar-footer bar-balanced" ng-hide="showHideLogIn">
+           <div class="button-bar">
+            <button class="button button-balanced" ng-click="logIn()">LogIn</button>
+    </div>
+          </div>
+</ion-view>

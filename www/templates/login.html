@@ -1,0 +1,33 @@
+<ion-view view-title="User Login">
+    <ion-nav-bar class="bar-calm">
+    </ion-nav-bar>
+    <ion-content>
+        <div class="row">
+            <form class="col" novalidate="">
+                <div class="list">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">
+                            Email
+                        </span>
+                        <input id="username" name="email" ng-model="loginData.email" type="email">
+                        </input>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">
+                            Password
+                        </span>
+                        <input id="password" name="password" ng-minlength="4" ng-model="loginData.password" type="password">
+                        </input>
+                    </label>
+                </div>
+                <span ng-show="error_msg" style="color: red">
+                    {{error}}
+                </span>
+                <button class="button button-full button-calm" ng-click="login(loginData)" type="submit">
+                    Login
+                </button>
+            </form>
+        </div>
+     \
+    </ion-content>
+</ion-view>

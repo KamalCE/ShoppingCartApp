@@ -1,0 +1,27 @@
+<ion-view view-title="Show Product">
+    <ion-nav-bar class="bar-calm">
+        <ion-nav-back-button class="button-clear">
+            <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content ng-init="showProducts()" class="padding has-header gem-ion-content profile-edit">
+    <ion-list>
+         <label class="item item-input item-stacked-label">
+          <span class="input-label">Product Name</span>
+          <input type="text" name="name" id="name" ng-model="product.name" readonly>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Product Description</span>
+          <input type="text" name="desc" id="desc" ng-model="product.desc" readonly>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Product Price</span>
+          <input type="text" name="price" id="price" ng-model="product.price" readonly>
+        </label>  
+        <div class="button-bar" ng-hide="hideAll">
+          <button class="button icon-left ion-ios-cart-outline button-energized">Add to Cart</button>
+          <button class="button icon-left ion-flash button-assertive">Buy Now</button>
+        </div>
+    </ion-list>
+    </ion-content>
+</ion-view>

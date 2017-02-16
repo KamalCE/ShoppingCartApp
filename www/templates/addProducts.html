@@ -1,0 +1,41 @@
+<ion-view view-title="Add Product" can-swipe-back="false">
+ <ion-nav-bar class="bar-calm">
+        <ion-nav-back-button class="button-clear">
+            <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="has-header gem-ion-content profile-edit">
+   <form name="productAdd" novalidate="novalidate">
+      <div class="list">
+        <label class="item item-input item-select">
+          <span class="input-label">Category</span>
+          <select name="category" id="category" ng-model="product.category" required="true">
+            <option value="Shirt">Shirt</option>
+            <option selected value="T-Shirt">T-Shirt</option>
+            <option value="Shoes">Shoes</option>
+            <option value="Glasses">Glasses</option>
+            <option value="Watches">Watches</option>
+          </select>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Product Name</span>
+          <input type="text" name="name" id="name" ng-model="product.name" required="true" placeholder="Enter Product Name">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Product Description</span>
+          <input type="text" name="desc" id="desc" ng-model="product.desc" required="true" placeholder=" Enter Product Description">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Product Price</span>
+          <input type="text" name="price" id="price" ng-model="product.price" required="true" placeholder="Enter Product Price">
+        </label>
+       
+  
+		  <div class="padding">
+		    <button ng-disabled="productAdd.name.$error.required || productAdd.desc.$error.required || productAdd.price.$error.required || productAdd.category.$error.required || productAdd.price.$error.quantity" ng-click="addProduct(product)" class=" button button-full button-positive">Add</button>   
+		  </div>
+		</div>
+    </form>
+
+  </ion-content>
+</ion-view>
